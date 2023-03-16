@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class BankAccount {
     // DEFINING VARIABLE TYPES
-    private String accNum;
+    private long accNum;
     private double checking;
     private double savings;
     private static int numAccountsCreated = 0;
@@ -10,7 +10,7 @@ public class BankAccount {
 
     // CONSTRUCTOR METHOD
     public void account(String accNum, Double checking, Double savings) {
-        this.accNum = accNum;
+        this.accNum = genAccNum();
         this.checking = checking;
         this.savings = savings;
         numAccountsCreated++;
@@ -59,7 +59,7 @@ public class BankAccount {
     // GENERATE RANDOM ACC NUMBER
     public static int genAccNum() {
         Random rand = new Random();
-        int randAccNum = rand.nextInt(2000000000) + 999999999;
-        return randAccNum;
+        int accNum = rand.nextInt(2000000000) + 999999999;
+        return accNum;
     }
 }
