@@ -60,6 +60,7 @@ public class BankAccount {
     public static int genAccNum() {
         Random rand = new Random();
         int accNum = rand.nextInt(2000000000) + 999999999;
+        accNum = Math.abs(accNum);
         return accNum;
     }
 }
